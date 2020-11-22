@@ -1,12 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <nav>NavBar</nav>
       <header>GoogleBooks search</header>
-      <div id='search'>search
+      <Switch>
+        <Route path="/search">
+        <div id='search'>search
         <input type='textbox'></input>
         <button>Search</button>
       </div>
@@ -21,7 +25,9 @@ function App() {
           <button id='save-buton'>save</button>
         </div>
       </div>
-      <div id='saved-books-container'>saved book container
+        </Route>
+        <Route path="/saved">
+        <div id='saved-books-container'>saved book container
         <div id='book-card'>book card
           <image id='book-image'>image</image>
           <h2 id='book-title'>Title</h2>
@@ -32,8 +38,10 @@ function App() {
           <button id='delete-buton'>delete</button>
         </div>
       </div>
+        </Route>
+      </Switch>
       <footer>footer</footer>
-    </div>
+    </Router>
   );
 }
 
