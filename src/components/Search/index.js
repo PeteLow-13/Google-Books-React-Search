@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import API from '../../utils/API';
+import Container from '../Container';
 
 
 class Search extends Component {
@@ -28,17 +29,7 @@ class Search extends Component {
                     <input type='textbox' id='search-text'></input>
                     <button onClick={this.search}>Search</button>
                 </div>
-                <div id='book-list-container'>Booklist conatiner
-                    <div id='book-card'>bookcard
-                        <image id='book-image'>image</image>
-                        <h2 id='book-title'>Title</h2>
-                        <h3 id='book-authors'>authors</h3>
-                        <p id='book-description'>description</p>
-                        <a id='book-link'>url</a>
-                        <button id='view-buton'>view</button>
-                        <button id='save-buton'>save</button>
-                    </div>
-                </div>
+                <Container books={this.state.books} />
             </div>
             
         );
